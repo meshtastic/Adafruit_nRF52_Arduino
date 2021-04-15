@@ -109,7 +109,6 @@ class AdafruitBluefruit
     /*------------------------------------------------------------------*/
     /* Lower Level Classes (Bluefruit.Advertising.*, etc.)
      *------------------------------------------------------------------*/
-    BLEPeriph          Periph;
     BLESecurity        Security;
     BLEGatt            Gatt;
 
