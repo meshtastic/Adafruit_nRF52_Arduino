@@ -43,6 +43,7 @@ class File : public Stream
   public:
     File (Adafruit_LittleFS &fs);
     File (char const *filename, uint8_t mode, Adafruit_LittleFS &fs);
+    File (); // default-constructs against InternalFS; defined in Adafruit_LittleFS_File.cpp
 
   public:
 
