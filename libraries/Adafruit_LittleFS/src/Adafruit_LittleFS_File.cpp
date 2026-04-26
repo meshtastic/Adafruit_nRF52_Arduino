@@ -24,6 +24,7 @@
 
 #include <Arduino.h>
 #include "Adafruit_LittleFS.h"
+#include "InternalFileSystem.h"
 #include "littlefs/lfs.h"
 
 //--------------------------------------------------------------------+
@@ -416,5 +417,12 @@ void File::rewindDirectory (void)
     lfs_dir_rewind(_fs->_getFS(), _dir);
   }
   _fs->_unlockFS();
+}
+
+// Default constructor — binds to the global InternalFS instance.
+// Allows File to be declared without an explicit filesystem argument,
+// matching the API of ESP32/RP2040/Portduino File objects.
+File::File() : File(InternalFS)
+{
 }
 
